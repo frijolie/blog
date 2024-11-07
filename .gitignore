@@ -1,0 +1,14 @@
+# Node
+node_modules/
+package-lock.json
+.cache
+
+# Visual Studio Code
+.vscode/*
+
+# Eleventy
+public/
+
+# General
+.env
+.log
