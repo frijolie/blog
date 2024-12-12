@@ -16,63 +16,62 @@ _In no particular order_
 
 _In no particular order_
 
--   ~~404 page~~
--   ~~about page~~
--   ~~contact page~~
--   ~~home page (with blogroll)~~
--   ~~wiki page (URL)~~
--   search functionality
--   favicon
--   RSS/Atom Feed
--   robots.txt
--   color pallette
--   post pagination
--   tag pagination
--   post archive by year
--   post archive by tag
--   light/dark themes
--   light/dark switching
--   mobile responsiveness
+* ~~404 page~~
+* ~~about page~~
+* ~~contact page~~
+* ~~home page (with blogroll)~~
+* ~~wiki page (URL)~~
+* search functionality
+* favicon
+* RSS/Atom Feed
+* robots.txt
+* color pallette
+* post pagination
+* tag pagination
+* post archive by year
+* post archive by tag
+* light/dark themes
+* light/dark switching
+* mobile responsiveness
 
 ## Documentation
 
 ### Front Matter Options
 
 #### Review Specific
-title
-subtitle
-coverCaption
-coverImage
-date
-
+* title
+* subtitle
+* coverCaption
+* coverImage
+* date
 
 #### Creators
-writer
-artist
-pencils
-inks
-colors
-letters
-editor
-designer
-coverArtist
-translator
+* writer
+* artist
+* pencils
+* inks
+* colors
+* letters
+* editor
+* designer
+* coverArtist
+* translator
 
 #### Metadata
-publisher
-imprint
-format
-seriesStart
-issueNumber
-totalIssues
-seriesType
-coverDate
-released
-coverPrice
-pages
-ageRating
-isbn
-sku
-upc
-bw
-bechdel
+* publisher
+* imprint
+* format
+* seriesStart
+* issueNumber
+* totalIssues
+* seriesType
+* coverDate
+* released
+* coverPrice
+* pages
+* ageRating
+* isbn
+* sku
+* upc
+* bw
+* bechdel

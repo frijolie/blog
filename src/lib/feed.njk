@@ -1,0 +1,35 @@
+---
+permalink: "/feed.xml"
+eleventyExcludeFromCollections: true
+icon: "/icon-512.jpg"
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:base="{{ site.domain | absoluteUrl(site.domain) }}">
+  <title>{{ site.title }}</title>
+  <id>{{ site.domain | absoluteUrl(site.domain) }}</id>
+  <updated>{{ collections.feed | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
+  <link rel="self" href="{{ permalink | absoluteUrl(site.domain) }}" type="application/atom+xml"/>
+  <link rel="alternate" type="text/html" href="{{ site.domain | absoluteUrl(site.domain) }}"/>
+  <author>
+    <name>{{ site.author.name }}</name>
+    <email>{{ site.author.email }}</email>
+  </author>
+  <icon>{{ icon | absoluteUrl(site.domain) }}</icon>
+  {%- for item in collections.feed %}
+  {%- set absolutePostUrl = item.url | absoluteUrl(site.domain) %}
+    <entry>
+      <title>{{ item.data.title }}</title>
+      {%- if item.data.summary %}<summary>{{ item.data.summary }}</summary>{% endif %}
+      <id>{{ absolutePostUrl }}</id>
+      <link rel="alternate" type="text/html" href="{{ absolutePostUrl }}"/>
+      <published>{{ item.date | dateToRfc3339 }}</published>
+      <updated>{% if item.data.updated %} {{item.data.updated[0] | dateToRfc3339}} {%- else -%} {{ item.date | dateToRfc3339 }} {% endif %}</updated>
+      {%- if item.data.tags %}
+        {%- for tag in item.data.tags %}
+          <category>{{ tag }}</category>
+        {%- endfor %}
+      {%- endif %}
+      <content xml:lang="en" type="html">{{ item.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
+    </entry>
+  {%- endfor %}
+</feed>

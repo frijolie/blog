@@ -1,7 +1,15 @@
+import pluginNavigation from "@11ty/eleventy-navigation";
+import pluginRss from "@11ty/eleventy-plugin-rss";
+
 import * as filters from "./src/lib/filters.js";
 import * as collections from "./src/lib/collections.js";
 
 export default function (eleventyConfig) {
+
+    // adding plugins
+    eleventyConfig.addPlugin(pluginRss);
+    eleventyConfig.addPlugin(pluginNavigation);
+
     // adding custom filters
     eleventyConfig.addFilter("dateShort", filters.dateShort);
     eleventyConfig.addFilter("dateLong", filters.dateLong);
