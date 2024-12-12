@@ -1,0 +1,15 @@
+{# URL formats #}
+{%- set thisURL = site.domain + page.url -%}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{ title or site.title }}</title>
+    <link rel="stylesheet" href="{{ '/css/style.css' | url }}"/>
+    <meta name="description" content="{{ description or site.description }}">
+    <link rel="canonical" href="{{ thisURL }}">
+    <a href="#main" class="skip-link">Skip to content</a>
+    <meta name="generator" content="{{ eleventy.generator }}">
+    <meta name="robots" content="{{ site.robots }}">
+    <link rel="alternate" href="/feed.xml" type="application/atom+xml" title="{{ site.title }}">
+</head>

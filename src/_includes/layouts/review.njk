@@ -1,0 +1,186 @@
+{% extends "layouts/base.njk" %}
+{% block content %}
+<article>
+    <header class=-"post-header">
+        <h2 class="post-title">{{ title }}</h2>
+        {%- if subtitle -%}
+            <p class="post-subtitle">{{ subtitle }}</p>
+        {%- endif -%}
+    </header>
+    <section class="post-cover-img">
+        <figure>
+            <img src="{{ coverImage }}" alt="" loading="lazy" fetchpriority="high" alt="{{ title }} cover image" />
+            <figcaption>{{ coverCaption }}</figcaption>
+        </figure>
+    </section>
+    <section class="post-content">
+        {{ content | safe }}
+        <meter min="0" max="5" low="2" high="4" value="{{ reviewRating }}">{{ reviewRating }}</meter>
+    </section>
+    <aside class="post-creators">
+        <table>
+            <thead>                
+                <tr>
+                    <th colspan="2">Creators</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Writer</td>
+                    <td>{{ writer | default("Unknown") }}</td>
+                </tr>
+                {%- if not pencils -%}
+                    <tr>
+                        <td>Artist</td>
+                        <td>{{ artist | default("Unknown") }}</td>
+                    </tr>
+                {%- else -%}
+                    <tr>
+                        <td>Pencils</td>
+                        <td>{{ pencils }}</td>
+                    </tr>
+                    <tr>
+                        <td>Inks</td>
+                        <td>{{ inks | default("Unknown") }}</td>
+                    </tr>
+                {%- endif -%}                
+                <tr>
+                    <td>Colors</td>
+                    <td>{{ colors | default("Unknown") }}</td>
+                </tr>                
+                <tr>
+                    <td>Letters</td>
+                    <td>{{ letters | default("Unknown") }}</td>
+                </tr>
+                {%- if coverArtist -%}
+                    <tr>
+                        <td>Cover Artist</td>
+                        <td>{{ coverArtist }}</td>
+                    </tr>
+                {%- endif -%}
+                <tr>
+                    <td>Editor</td>
+                    <td>{{ editor | default("Unknown") }}</td>
+                </tr>                
+                {% if designer %}
+                <tr>
+                    <td>Designer</td>
+                    <td>{{ designer }}</td>
+                </tr>
+                {% endif %}
+                {% if translator %}
+                <tr>
+                    <td>Translator</td>
+                    <td>{{ translator }}</td>
+                </tr>
+                {% endif %}
+            </tbody>
+        </table>
+    </aside>
+    <aside class="post-metadata">
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="2">Metadata</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Publisher</td>
+                    <td>{{ publisher | default("Self-Published") }}</td>
+                </tr>
+                {%- if imprint -%}
+                    <tr>
+                        <td>Imprint</td>
+                        <td>{{ imprint }}</td>
+                    </tr>
+                {%- endif -%}
+                <tr>
+                    <td><span title="The format of the book e.g. single, trade, omnibus">Format</span></td>
+                    <td>{{ format | default("Single Issue")}}</td>
+                </tr>
+                <tr>
+                    <td><span title="The four-digit year the series started">Series Start</span></td>
+                    <td>{{ seriesStart | default("Unknown")}}</td>
+                </tr>
+                {%- if seriesType -%}
+                    <tr>
+                        <td>Series Type</td>
+                        <td>{{ seriesType }}</td>
+                    </tr>
+                {%- endif -%}
+                <tr>
+                    <td>Issue Number</td>
+                    <td>
+                        #{{ issueNumber }}
+                        {%- if totalIssues -%}
+                            &nbsp;(of {{ totalIssues }})
+                        {%- endif -%}
+                    </td>
+                </tr>                
+                <tr>
+                    <td><span title="The date the book was created as per the indicia e.g. September 2021">Cover Date</span></td>
+                    <td>{{ coverDate | default("Unknown") }}</td>
+                </tr>
+                {%- if released -%}
+                    <tr>
+                        <td>Date Released</td>
+                        <td>{{ released | dateLong }}</td>
+                    </tr>
+                {%- endif -%}
+                {%- if coverPrice -%}
+                    <tr>
+                        <td>Price</td>
+                        <td>{{ coverPrice }}</td>
+                    </tr>
+                {%- endif -%}
+                {%- if pages -%}
+                    <tr>
+                        <td>Pages</td>
+                        <td>{{ pages }}</td>
+                    </tr>
+                {%- endif -%}
+                {%- if ageRating -%}
+                    <tr>
+                        <td><span title="The age rating given to the book e.g. All Ages, Mature, Teen">Age Rating</span></td>
+                        <td>{{ ageRating }}</td>
+                    </tr>
+                {%- endif -%}
+                {%- if isbn -%}
+                    <tr>
+                        <td><abbr title="International Standard Book Number">ISBN</abbr></td>
+                        <td>{{ isbn }}</td>
+                    </tr>
+                {%- endif -%}
+                {%- if sku -%}
+                    <tr>
+                        <td><abbr title="Stock Keeping Unit">SKU</abbr></td>
+                        <td>{{ sku }}</td>
+                    </tr>
+                {%- endif -%}
+                {%-  if upc -%}
+                    <tr>
+                        <td><abbr title="Universal Product Code">UPC</abbr></td>
+                        <td>{{ upc }}</td>
+                    </tr>
+                {%- endif -%}
+                <tr>
+                    <td><span title="Is the book priarily in black and white?">B&amp;W?</span></td>
+                    <td>{{ bw | default(false) }}</td>
+                </tr>
+                {%- if bechdel -%}
+                    <tr>
+                        <td>
+                            <span title="Does this book pass the Bechdel test?">
+                                <a href="https://en.wikipedia.org/wiki/Bechdel_test">Bechdel Test?</a>
+                            </span>
+                        </td>
+                        <td>{{ bechdel }}</td>
+                    </tr>                
+                {%- endif -%}
+            </tbody>
+        </table>
+    </aside>
+    <footer class="post-footer"></footer>
+</article>
+{% endblock %}

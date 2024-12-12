@@ -1,0 +1,30 @@
+{
+    "name": "blog",
+    "version": "0.1.0",
+    "description": "A personal blog about comics and stuff",
+    "main": "index.html",
+    "scripts": {
+        "clean": "rd /s /q public",
+        "build": "eleventy",
+        "serve": "eleventy --serve"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/frijolie/blog.git"
+    },
+    "keywords": [
+        "comics",
+        "blog",
+        "eleventy"
+    ],
+    "author": "Frijolie",
+    "license": "GPL-3.0-only",
+    "bugs": {
+        "url": "https://github.com/frijolie/blog/issues"
+    },
+    "homepage": "https://github.com/frijolie/blog#readme",
+    "type": "module",
+    "dependencies": {
+        "@11ty/eleventy": "^3.0.0"
+    }
+}

@@ -1,0 +1,20 @@
+<header>
+    <h1><span class="site-title">{{ site.title }}</span></h1>
+    <nav>
+        <ul>
+            <li>
+                <a href="/" {%- if page.url == "/" -%}aria-current="page"{%- endif -%}>Home</a>
+            </li>
+            {%- for item in collections.pages -%}
+                <li>
+                    <a href="{{ item.url }}" {%- if item.url == page.url -%}aria-current="page"{%- endif -%}>
+                        {{ item.data.title }}
+                    </a>
+                </li>
+            {%- endfor -%}
+            <li>
+                <a href="https://comicmetadata.miraheze.org/wiki/Main_Page">Wiki</a>
+            </li>
+        </ul>
+    </nav>
+</header>

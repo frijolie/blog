@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="{{ site.language }}">
+{%- include "partials/html-head.njk" -%}
+<body>
+    {%- include "partials/site-nav.njk" -%}
+    <main id="main">
+        {%- block content -%}
+            {{ content | safe }}
+        {%- endblock -%}
+    </main>
+    {%- include "partials/site-footer.njk" -%}
+</body>
+</html>
