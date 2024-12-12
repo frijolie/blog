@@ -8,11 +8,23 @@ const addOrdinal = (i) => {
 
 export const dateShort = (i) => {
     // 10/14/2021
-    return DateTime.fromJSDate(i).toISODate().toString();
+    const getDay = DateTime.fromJSDate(i).toFormat("dd").toString();
+    const getMonth = DateTime.fromJSDate(i).toFormat("LL").toString();
+    const getYear = DateTime.fromJSDate(i).toFormat("y").toString();
+    return `${getMonth}/${getDay}/${getYear}`
 };
 
+export const dateMed = (i) => {
+    // Mar 17th, 2019
+    const getDay = DateTime.fromJSDate(i).toFormat("d").toString();
+    const getDayWithOrdinal = addOrdinal(getDay);
+    const getMonth = DateTime.fromJSDate(i).toFormat("LLL").toString();
+    const getYear = DateTime.fromJSDate(i).toFormat("y").toString();
+    return `${getMonth} ${getDayWithOrdinal}, ${getYear}`;
+}
+
 export const dateLong = (i) => {
-    // January 2nd 2024
+    // January 2nd, 2024
     const getDay = DateTime.fromJSDate(i).toFormat("d").toString();
     const getDayWithOrdinal = addOrdinal(getDay);
     const getMonth = DateTime.fromJSDate(i).toFormat("LLLL").toString();
@@ -42,3 +54,8 @@ export const dateMonthLong = (i) => {
     // January
     return DateTime.fromJSDate(i).toFormat("LLLL").toString();
 };
+
+export const excerpt = (i) => {
+    const content = i.replace(/(<([^>]+)>)/gi, "");
+    return content.substr(0, content.lastIndexOf(" ", 250)).concat("…");
+}

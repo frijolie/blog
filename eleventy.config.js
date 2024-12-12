@@ -12,11 +12,13 @@ export default function (eleventyConfig) {
 
     // adding custom filters
     eleventyConfig.addFilter("dateShort", filters.dateShort);
+    eleventyConfig.addFilter("dateMed", filters.dateMed);
     eleventyConfig.addFilter("dateLong", filters.dateLong);
     eleventyConfig.addFilter("dateYMD", filters.dateYMD);
     eleventyConfig.addFilter("dateYear", filters.dateYear);
     eleventyConfig.addFilter("dateMonthShort", filters.dateMonthShort);
     eleventyConfig.addFilter("dateMonthLong", filters.dateMonthLong);
+    eleventyConfig.addFilter("excerpt", filters.excerpt);
 
     // adding custom collections
     eleventyConfig.addCollection("reviews", collections.reviews);

@@ -23,7 +23,7 @@ _In no particular order_
 * ~~wiki page (URL)~~
 * search functionality
 * favicon
-* RSS/Atom Feed
+* ~~RSS/Atom Feed~~
 * robots.txt
 * color pallette
 * post pagination
