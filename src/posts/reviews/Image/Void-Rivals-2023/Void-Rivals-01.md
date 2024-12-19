@@ -1,5 +1,5 @@
 ---
-title: "Void Rivals #1"
+title: "Void Rivals (2023) #1"
 subtitle: "Something: Part II"
 date: 2024-12-05
 writer: "Robert Kirkman"

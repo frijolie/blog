@@ -1,5 +1,5 @@
 ---
-title: "Batman: Dark Patterns #1"
+title: "Batman: Dark Patterns (2024) #1"
 subtitle: "We are the Wounded: Part One"
 date: 2024-12-11
 coverImage: "https://previewsworld.com/SiteImage/MainImage/STL349192.jpg"

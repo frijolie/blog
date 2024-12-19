@@ -55,6 +55,10 @@ export const dateMonthLong = (i) => {
     return DateTime.fromJSDate(i).toFormat("LLLL").toString();
 };
 
+export const toUTCString = (i) => {
+    return DateTime.fromJSDate(i).toLocaleString(DateTime.DATE_FULL).toString();
+}
+
 export const excerpt = (i) => {
     const content = i.replace(/(<([^>]+)>)/gi, "");
     return content.substr(0, content.lastIndexOf(" ", 250)).concat("…");
