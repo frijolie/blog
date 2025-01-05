@@ -35,6 +35,14 @@ _In no particular order_
 * light/dark themes
 * light/dark switching
 * mobile responsiveness
+* related posts by genre
+* related posts by creator
+* featured posts
+* top posts (5 rating)
+* ~~art rating~~
+* ~~plot rating~~
+* ~~overall (avg) rating based on art & story~~
+* reading time
 
 ## Documentation
 
@@ -77,3 +85,6 @@ _In no particular order_
 * upc
 * bw
 * bechdel
+* artRating
+* plotRating
+* overallRating

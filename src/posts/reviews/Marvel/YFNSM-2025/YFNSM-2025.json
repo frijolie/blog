@@ -1,5 +1,12 @@
+<<<<<<< HEAD
 {
     "seriesType": "Mini-Series",
     "seriesStart": "2025",
     "totalIssues": 4
+=======
+{
+    "seriesType": "Mini-Series",
+    "seriesStart": "2025",
+    "totalIssues": 4
+>>>>>>> eaae89d29825dbd8403d15a5ca681bb780841f02
 }

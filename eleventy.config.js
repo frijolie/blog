@@ -18,6 +18,7 @@ export default function (eleventyConfig) {
     eleventyConfig.addFilter("dateMonthShort", filters.dateMonthShort);
     eleventyConfig.addFilter("dateMonthLong", filters.dateMonthLong);
     eleventyConfig.addFilter("excerpt", filters.excerpt);
+    eleventyConfig.addFilter("toUTCString", filters.toUTCString);
 
     // adding custom collections
     eleventyConfig.addCollection("reviews", collections.reviews);

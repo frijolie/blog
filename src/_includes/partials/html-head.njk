@@ -1,10 +1,14 @@
 {# URL formats #}
 {%- set thisURL = site.domain + page.url -%}
+{%- set pageTitle = title + ' - ' + site.title -%}
+{% if title === site.title %}
+    {% set pageTitle = title %}
+{% endif %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{ title or site.title }}</title>
+    <title>{{ pageTitle }}</title>
     <link rel="stylesheet" href="{{ '/css/style.css' | url }}"/>
     <meta name="description" content="{{ description or site.description }}">
     <link rel="canonical" href="{{ thisURL }}">

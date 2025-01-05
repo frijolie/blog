@@ -6,6 +6,7 @@
         {%- if subtitle -%}
             <p class="post-subtitle">{{ subtitle }}</p>
         {%- endif -%}
+        <p class="post-pubDate">{{ date | toUTCString }}</p>
     </header>
     <section class="post-cover-img">
         <figure>
@@ -15,7 +16,32 @@
     </section>
     <section class="post-content">
         {{ content | safe }}
-        <meter min="0" max="5" low="2" high="4" value="{{ reviewRating }}">{{ reviewRating }}</meter>
+        <footer class="ratings">
+            <table>
+                <tr>
+                    <td>Art</td>
+                    <td>
+                        <meter min="0" max="5" low="2" high="4" value="{{ artRating }}" id="artRating">{{ artRating }}</meter>
+                        <output for="artRating">{{ artRating }}/5<output>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Plot</td>
+                    <td>
+                        <meter min="0" max="5" low="2" high="4" value="{{ plotRating }}" id="plotRating">{{ plotRating }}</meter>
+                        <output for="plotRating">{{ plotRating }}/5</output>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Overall</td>
+                    <td>
+                        {% set overallRating = (artRating + plotRating) / 2 %}
+                        <meter min="0" max="5" low="2" high="4" value="{{ overallRating }}" id="overallRating">{{ overallRating }}</meter>
+                        <output for="overallRating">{{ overallRating }}/5</output>
+                    </td>
+                </tr>
+            </table>
+        </footer>
     </section>
     <aside class="post-creators">
         <table>
@@ -120,7 +146,7 @@
                 </tr>                
                 <tr>
                     <td><span title="The date the book was created as per the indicia e.g. September 2021">Cover Date</span></td>
-                    <td>{{ coverDate | default("Unknown") }}</td>
+                    <td>{{ coverDate | default("Unknown") | toUTCString }}</td>
                 </tr>
                 {%- if released -%}
                     <tr>

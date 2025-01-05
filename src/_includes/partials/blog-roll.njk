@@ -1,5 +1,6 @@
 <ul class="blog-roll-list">
     {% for post in collections.reviews %}
+<<<<<<< HEAD
         <li {% if post.url == url%}aria-current="page"{% endif %} class="blog-roll-item">
             <article class="post-preview-article">
                 <img src="{{ post.data.coverImage }}" class="post-preview-cover">
@@ -18,6 +19,22 @@
                     <p class="post-preview-excerpt">{{ post.templateContent | excerpt }}</p>
                     <a href="{{ post.url }}" class="post-preview-read-more">Read&nbsp;More</a>
                 </div>
+=======
+        <li {% if post.url == url%}aria-current="page"{% endif %}>
+            <article>
+                <section>
+                    <img src="{{ post.data.coverImage }}" height=150 width=100>
+                    <time>{{ post.data.date | dateMed }}</time>
+                    <p>{{ post.data.tags }}</p>
+                </section>
+                <section>
+                    <a href="{{ post.url }}">
+                        <h3>{{ post.data.title }}</h3>
+                    </a>
+                    <p>{{ post.templateContent | excerpt }}</p>
+                    <p><a href="{{ post.url }}">Read More</a></p>
+                </section>
+>>>>>>> eaae89d29825dbd8403d15a5ca681bb780841f02
             </article>
         </li>
     {% endfor %}
