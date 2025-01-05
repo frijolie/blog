@@ -1,6 +1,5 @@
 ---
 title: Contact Me
-layout: "layouts/base.njk"
 ---
 
 If you'd like to send me a message, you may do so here. I'll try to respond as fast as I'm able.

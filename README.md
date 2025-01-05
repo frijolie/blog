@@ -21,8 +21,6 @@ _In no particular order_
 * ~~contact page~~
 * ~~home page (with blogroll)~~
 * ~~wiki page (URL)~~
-* ~~post excerpts~~
-* ~~custom date formats~~
 * search functionality
 * favicon
 * ~~RSS/Atom Feed~~

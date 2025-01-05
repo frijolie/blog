@@ -1,5 +1,6 @@
-<ul class="blog-roll-list">
+<ul>
     {% for post in collections.reviews %}
+<<<<<<< HEAD
 <<<<<<< HEAD
         <li {% if post.url == url%}aria-current="page"{% endif %} class="blog-roll-item">
             <article class="post-preview-article">
@@ -23,10 +24,16 @@
         <li {% if post.url == url%}aria-current="page"{% endif %}>
             <article>
                 <section>
+=======
+        <li {% if post.url == url%}aria-current="page"{% endif %}>
+            <article>
+                <section class="preview-meta">
+>>>>>>> parent of 9e97b7d (homepage styles. switch to scsss for better organization)
                     <img src="{{ post.data.coverImage }}" height=150 width=100>
                     <time>{{ post.data.date | dateMed }}</time>
                     <p>{{ post.data.tags }}</p>
                 </section>
+<<<<<<< HEAD
                 <section>
                     <a href="{{ post.url }}">
                         <h3>{{ post.data.title }}</h3>
@@ -35,6 +42,13 @@
                     <p><a href="{{ post.url }}">Read More</a></p>
                 </section>
 >>>>>>> eaae89d29825dbd8403d15a5ca681bb780841f02
+=======
+                <section class="preview-content">
+                    <a href="{{ post.url }}">{{ post.data.title }}</a>
+                    <p>{{ post.templateContent | excerpt }}</p>
+                    <p><a href="{{ post.url }}">Read More</a></p>
+                </section>
+>>>>>>> parent of 9e97b7d (homepage styles. switch to scsss for better organization)
             </article>
         </li>
     {% endfor %}

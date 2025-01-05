@@ -5,6 +5,7 @@ import * as filters from "./src/lib/filters.js";
 import * as collections from "./src/lib/collections.js";
 
 export default function (eleventyConfig) {
+
     // adding plugins
     eleventyConfig.addPlugin(pluginRss);
     eleventyConfig.addPlugin(pluginNavigation);
@@ -26,14 +27,11 @@ export default function (eleventyConfig) {
     eleventyConfig.addCollection("feed", collections.feed);
     eleventyConfig.addCollection("featured", collections.featured);
 
-    // rebuild files when changes are detected
-    eleventyConfig.addWatchTarget("src/css/");
-    eleventyConfig.addWatchTarget("src/posts/");
-    eleventyConfig.addWatchTarget("src/pages/");
-
     // copy files in the directories to the output folder upon build
     eleventyConfig.addPassthroughCopy("src/css/*.css");
-    eleventyConfig.addPassthroughCopy("src/assets/images/**");
+
+    // rebuild files when changes are detected
+    eleventyConfig.addWatchTarget("src/css/*.css");
 
     return {
         dir: {
