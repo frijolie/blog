@@ -1,0 +1,32 @@
+@use "../abstracts/colors" as *;
+
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-weight: 700;
+    text-wrap: balance;
+}
+
+html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    -text-size-adjust: none;
+}
+
+p {
+    text-wrap: pretty;
+}
+
+li {
+    text-wrap: pretty;
+}
+
+.site-title {
+    font-family: "Lobster", serif;
+    font-weight: 500;
+    font-style: normal;
+}

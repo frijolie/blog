@@ -1,0 +1,8 @@
+body {
+    display: grid;
+    font-family: system-ui, sans-serif;
+    font-size: 1rem;
+    grid-template-rows: repeat(2, auto) 1fr auto;
+    grid-template-columns: 1fr;
+    min-block-size: 100vh;
+}

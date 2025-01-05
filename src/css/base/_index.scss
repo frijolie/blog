@@ -1,0 +1,7 @@
+// styles applied to an element selector, a descendent selector, or a child selector
+// it can also include pseudo-classes. It does not, however, contain class or ID selectors
+// these define default styles for how elements should look in all occurrences on the page
+
+@forward "reset";
+@forward "typography";
+@forward "elements";

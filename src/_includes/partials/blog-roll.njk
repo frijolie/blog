@@ -1,17 +1,23 @@
-<ul>
+<ul class="blog-roll-list">
     {% for post in collections.reviews %}
-        <li {% if post.url == url%}aria-current="page"{% endif %}>
-            <article>
-                <section class="preview-meta">
-                    <img src="{{ post.data.coverImage }}" height=150 width=100>
-                    <time>{{ post.data.date | dateMed }}</time>
-                    <p>{{ post.data.tags }}</p>
-                </section>
-                <section class="preview-content">
-                    <a href="{{ post.url }}">{{ post.data.title }}</a>
-                    <p>{{ post.templateContent | excerpt }}</p>
-                    <p><a href="{{ post.url }}">Read More</a></p>
-                </section>
+        <li {% if post.url == url%}aria-current="page"{% endif %} class="blog-roll-item">
+            <article class="post-preview-article">
+                <img src="{{ post.data.coverImage }}" class="post-preview-cover">
+                <div class="post-preview-wrapper">
+                    <h2 class="post-preview-heading">
+                        <a href="{{ post.url }}" class="post-preview-link">{{ post.data.title }}</a>
+                    </h2>
+                    <div class="post-preview-date">
+                        <img src="assets/images/calendar-month.svg" class="post-preview-calendar-icon" height="20" width="20" />
+                        &nbsp;<time class="post-preview-time">{{ post.data.date | dateMed }}</time>
+                    </div>
+                    <div class="post-preview-tag-container">
+                        <img src="assets/images/tag.svg" class="post-preview-tag-icon"/>
+                        &nbsp;<p class="post-preview-tags">{{ post.data.tags }}</p>
+                    </div>
+                    <p class="post-preview-excerpt">{{ post.templateContent | excerpt }}</p>
+                    <a href="{{ post.url }}" class="post-preview-read-more">Read&nbsp;More</a>
+                </div>
             </article>
         </li>
     {% endfor %}
